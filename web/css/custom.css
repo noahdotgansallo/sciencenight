@@ -1,0 +1,27 @@
+.toast{
+	position: fixed;
+	bottom: 30px;
+	margin-bottom: -200px;
+	opacity: .1;
+	display: none;
+}
+
+.overlay{
+	z-index: 10001;
+	position: fixed;
+	height: 100%;
+	width: 100%;
+	z-index: 10000;
+	background-image: url('../assets/loading.gif');
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.card-dash{
+	padding-top: 13px;
+}
+
+.delete-m:hover{
+	color: #ea494e;
+}

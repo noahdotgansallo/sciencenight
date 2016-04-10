@@ -1,0 +1,48 @@
+<div class="col-lg-4 col-lg-offset-4 col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1 card-dash" ng-repeat="subject in subjects">
+	
+	<div class="panel panel-primary">
+		
+		<div class="panel-heading" style="padding-top:15px;padding-bottom:15px">
+			
+			<h3 class="panel-title">
+				
+				{{subject.name}} <span class="pull-right">{{subject.average}}% correct</span>
+
+			</h3>
+			
+		</div>
+
+		<div class="panel-body">
+
+			<div class="row">
+				<div class="col-md-12">
+
+					<table class="table table-hover">
+						<thead>
+							<th>Gender: {{subject.gender}}</th>
+							<th>Arm</th>
+							<th>Neck</th>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Ones</td>
+								<td>{{subject.a_one}}</td>
+								<td>{{subject.n_one}}</td>
+							</tr>
+							<tr>
+								<td>Twos</td>
+								<td>{{subject.a_two}}</td>
+								<td>{{subject.n_two}}</td>
+							</tr>
+						</tbody>
+					</table>
+
+				</div>
+
+				
+			</div>
+			
+		</div>
+		
+	</div>
+</div>

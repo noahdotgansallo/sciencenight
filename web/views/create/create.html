@@ -1,0 +1,83 @@
+<div class="col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1 card-dash">
+	
+	<div class="panel panel-info">
+		
+		<div class="panel-heading" style="padding-top:15px;padding-bottom:15px">
+			
+			<h3 class="panel-title">
+				
+				Create a new subject
+
+			</h3>
+			
+		</div>
+
+		<div class="panel-body">
+
+			<div class="row">
+				<div class="col-md-12">
+
+					<form class="form-horizontal" ng-submit="create();">
+					  <fieldset>
+					    <legend>Create</legend>
+
+
+					    	<div class="col-md-6">
+								
+								  <label class="control-label" for="fname">Full Name</label>
+								  <input class="form-control" id="fname" type="text" placeholder="ex. Noah Gansallo" ng-model="formData.name" required>
+								
+							</div>
+
+							<div class="col-md-6">
+								
+								  <label class="control-label" for="gender">Gender</label>
+								  <input class="form-control" id="gender" type="text" placeholder="ex. m" ng-model="formData.gender" required>
+								
+							</div>
+
+							<div class="col-md-3">
+								
+								  <label class="control-label" for="aone">Arm Ones</label>
+								  <input class="form-control" id="atwo" type="text" placeholder="ex. 3" ng-model="formData.a_one" required>
+								
+							</div>
+
+							<div class="col-md-3">
+								
+								  <label class="control-label" for="atwo">Arm Two</label>
+								  <input class="form-control" id="atwo" type="text" placeholder="ex. 3" ng-model="formData.a_two" required>
+								
+							</div>
+
+							<div class="col-md-3">
+								
+								  <label class="control-label" for="none">Neck One</label>
+								  <input class="form-control" id="none" type="text" placeholder="ex. 3" ng-model="formData.n_one" required>
+								
+							</div>
+
+							<div class="col-md-3">
+								
+								  <label class="control-label" for="ntwo">Neck Two</label>
+								  <input class="form-control" id="ntwo" type="text" placeholder="ex. 3" ng-model="formData.n_two" required>
+								
+							</div>
+
+							<div class="col-md-12">
+								<br>
+								<center><input type="submit" value="Submit" class="btn btn-primary"></input></center>
+							</div>
+
+					    </div>
+					</form>
+
+				</div>
+
+				
+			</div>
+			
+		</div>
+		
+	</div>
+</div>

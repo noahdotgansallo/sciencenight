@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html ng-app="emailApp">
+<head>
+	<title></title>
+
+	<!-- Import AngularJS Material CSS -->
+	<link rel="stylesheet" type="text/css" href="node_modules/angular-material/angular-material.css">
+</head>
+<body ng-controller="TestCtrl">
+
+	<div layout="row" layout-xs="column" style="height:100%">
+		<div ng-controller="sideNavCtrl" layout="column" style="height:100%" ng-cloak>
+		  <section layout="row" flex>
+		    <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')">
+		      <md-toolbar class="md-theme-indigo">
+		        <h1 class="md-toolbar-tools">hackGFS</h1>
+		      </md-toolbar>
+		      <md-content layout-padding ng-controller="LeftCtrl">
+		        <md-button ng-click="close()" class="md-primary" hide-gt-md>
+		          Close Sidenav Left
+		        </md-button>
+		        <p hide-md show-gt-md>
+		          This sidenav is locked open on your device. To go back to the default behavior,
+		          narrow your display.
+		        </p>
+		      </md-content>
+		    </md-sidenav>
+		  </section>
+		</div>
+	</div>
+
+	<div ng-controller="sideNavListCtrl" ng-cloak>
+	  <md-content>
+	    <md-list>
+	      <md-list-item class="md-2-line" ng-repeat="item in menuItems">
+	        <a href="{{item.route}}" style="text-decoration:none" class="md-list-item-text" layout="column">
+	          <h3>{{ item.name }}</h3>
+	        </a>
+	      </md-list-item>
+	    </md-list>
+	  </md-content>
+	</div>
+
+
+
+
+
+
+
+
+
+
+	<!-- Import AngularJS -->
+	<script src="node_modules/angular/angular.min.js"></script>
+
+	<!-- Import AngularJS Animations -->
+	<script src="node_modules/angular-animate/angular-animate.min.js"></script>
+
+	<!-- Import AngularJS ARIA Support -->
+  	<script src="node_modules/angular-aria/angular-aria.min.js"></script>
+
+  	<!-- Import AngularJS Error/Warning Messages -->
+  	<script src="node_modules/angular-messages/angular-messages.min.js"></script>
+
+  	<!-- Import AngularJS Material JS -->
+  	<script src="node_modules/angular-material/angular-material.min.js"></script>
+
+  	<!-- Import AngularJS Router -->
+	<script src="node_modules/angular-route/angular-route.min.js"></script>
+
+	<!-- Import AngularJS Resources -->
+	<script src="node_modules/angular-resource/angular-resource.min.js"></script>
+
+
+	<!-- CUSTOM MODULES GO HERE -->
+
+	<!-- Import Custom Base Router -->
+	<script src="js/modules/baseRoute.js"></script>
+
+	<!-- Import Citrus Sanitizer -->
+	<script src="js/modules/citrus.js"></script>
+
+	<!--
+	/*
+    |
+    | Dependency Injection
+    | 
+    |
+    | All dependencies must be injected BEFORE this comment.
+    | Once app.js is used, we can no longer inject dependcies
+    | into the app itself. 
+    |
+    */
+    -->
+
+  	<!-- Import our AngularJS Application (emailApp) -->
+	<script src="js/app.js"></script>
+
+	<!-- Default Code for AngularJS Material Design Components -->
+	<script src="js/controllers/appCtrl.js"></script>
+</body>
+</html>

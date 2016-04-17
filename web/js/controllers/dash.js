@@ -39,6 +39,8 @@ webApp
 			$http.post(url, $scope.formData).then(
 				function(response){
 
+					$scope.formData = {};
+
 
 				});
 

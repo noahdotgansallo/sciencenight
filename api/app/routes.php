@@ -14,3 +14,5 @@
 Route::post('create/', 'HomeController@create');
 
 Route::get('view/', 'HomeController@view');
+
+Route::get('avg/', 'HomeController@avg');

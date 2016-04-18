@@ -9,6 +9,24 @@ webApp
 
 		}
 
+		$scope.getAmount = function(){
+
+			url = baseRouter.route('amt');
+
+			$http.get(url).then(
+				function(response){
+
+						$scope.amount = response.data.data;
+
+
+
+					}
+				);
+
+		}
+
+		$scope.getAmount();
+
 		/*$scope.logout = function()
 		{
 

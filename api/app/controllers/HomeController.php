@@ -20,6 +20,18 @@ class HomeController extends BaseController {
 		return View::make('hello');
 	}
 
+	public function getAmount(){
+
+		$female = Subject::where('gender', '=', 'f')->get()->count();
+
+		$male = Subject::where('gender', '=', 'm')->get()->count();
+
+		$data = Citrus::combine('male', $male, 'female', $female);
+
+		return $data;
+
+	}
+
 	public function view(){
 
 		try {

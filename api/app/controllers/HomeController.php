@@ -20,6 +20,16 @@ class HomeController extends BaseController {
 		return View::make('hello');
 	}
 
+	public function subject($id){
+
+		$subject = Subject::find($id);
+
+		$data = $subject->percentile();
+
+		return $data;
+
+	}
+
 	public function getAmount(){
 
 		$female = Subject::where('gender', '=', 'f')->get()->count();
@@ -34,9 +44,30 @@ class HomeController extends BaseController {
 
 	public function deviation(){
 
-		$arm = Subject::arm();
+		$male = Subject::male();
 
-		$data = Subject::deviate($arm);
+		$female = Subject::female();
+
+		$data = array();
+
+		$data['male'] = array(
+			'arm' => Subject::deviate(Subject::arm($male)),
+			'neck' => Subject::deviate(Subject::neck($male))
+			);
+
+		$data['female'] = array(
+			'arm' => Subject::deviate(Subject::arm($female)),
+			'neck' => Subject::deviate(Subject::neck($female))
+			);
+
+
+
+
+
+
+		$data = Citrus::response('data', $data);
+
+
 
 		return $data;
 

@@ -29,6 +29,37 @@ class Subject extends Eloquent {
 
 	}
 
+	public function avg(){
+
+		$sum = $this->a_one + $this->a_two + $this->n_one + $this->n_two;
+
+		$mean = round($sum/4, 2);
+
+		return $mean;
+
+	}
+
+	public function percentile(){
+
+		$subjects = Subject::all();
+
+		$total = $subjects->count();
+
+		$data = array();
+
+		foreach($subjects as $subject){
+
+			$data[$subject->id] = $subject->avg();
+
+		}
+
+		arsort($data);
+
+		return $data;
+
+
+	}
+
 	public static function female(){
 
 		$subjects = Subject::all();
@@ -49,13 +80,11 @@ class Subject extends Eloquent {
 
 	}
 
-	public static function arm(){
+	public static function arm($array = null){
 
 		$data = array();
 
-		$subjects = Subject::all();
-
-		foreach ($subjects as $subject) {
+		foreach ($array as $subject) {
 
 			$data[] = $subject->a_one + $subject->a_two;
 
@@ -66,13 +95,11 @@ class Subject extends Eloquent {
 
 	}
 
-	public static function neck(){
+	public static function neck($array = null){
 
 		$data = array();
 
-		$subjects = Subject::all();
-
-		foreach ($subjects as $subject) {
+		foreach ($array as $subject) {
 
 			$data[] = $subject->n_one + $subject->n_two;
 
@@ -221,11 +248,11 @@ class Subject extends Eloquent {
 
 			$number = $a - $mean;
 
-			$array[] = $number*$number;
+			$data[] = $number*$number;
 
 		}
 
-		return $array;
+		return $data;
 
 	}
 

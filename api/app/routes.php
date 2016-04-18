@@ -20,3 +20,5 @@ Route::get('avg/', 'HomeController@avg');
 Route::get('amt/', 'HomeController@getAmount');
 
 Route::get('deviation', 'HomeController@deviation');
+
+Route::get('subject/{id}', 'HomeController@subject');

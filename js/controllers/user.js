@@ -7,7 +7,7 @@ webApp
 
 		var id = $routeParams.userId;
 
-		url = baseRouter.route('user/p/'+id);
+		url = baseRouter.route('subject/'+id);
 
 
 		$http.get(url).then(

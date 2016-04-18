@@ -66,44 +66,17 @@ class HomeController extends BaseController {
 
 	public function avg(){
 
-		$male = Subject::male();
+		$female = array(
+			'arm' => Subject::getFemaleArmAvg(),
+			'neck' => Subject::getFemaleNeckAvg()
+			);
 
-		$female = Subject::female();
+		$male = array(
+			'arm' => Subject::getMaleArmAvg(),
+			'neck' => Subject::getMaleNeckAvg()
+			);
 
-		$counter = 0;
-
-		$maleAvg = 0;
-		$femaleAvg = 0;
-
-		$data = array();
-
-		foreach($male as $male){
-
-			$maleAvg = $maleAvg + $male->a_one;
-
-			$maleAvg = $maleAvg + $male->a_two;
-
-			$counter = $counter + 1;
-
-		}
-
-		$data['male'] = $maleAvg/$counter;
-
-		$counter = 0;
-
-		foreach($female as $female){
-
-			$femaleAvg = $femaleAvg + $female->a_one;
-
-			$femaleAvg = $femaleAvg + $female->a_two;
-
-			$counter = $counter + 1;
-
-		}
-
-		$femaleAvg = $femaleAvg/$counter;
-
-		$data['female'] = $femaleAvg; 
+		$data = Citrus::combine('male', $male, 'female', $female);
 
 		return $data;
 	}

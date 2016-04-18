@@ -14,6 +14,17 @@ webApp
 
 				});
 
+			url = baseRouter.route('avg');
+
+			$http.get(url).then(
+				function(response){
+
+					$scope.avg = response.data.data;
+
+					console.log($scope.avgs);
+
+				});
+
 		}
 
 		$scope.load();

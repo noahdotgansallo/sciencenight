@@ -1,3 +1,40 @@
+<div class="col-lg-4 col-lg-offset-4 col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1 card-dash">
+	<div class="panel panel-info">
+		<div class="panel-heading">
+			Data Summary
+		</div>
+		<div class="panel-body">
+			<div class="row">
+				<div class="col-md-12">
+
+					<table class="table table-hover">
+						<thead>
+							<th>Gender</th>
+							<th>Arm Avg</th>
+							<th>Neck Avg</th>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Male</td>
+								<td><b>{{avg.male.arm*10}}</b>%</td>
+								<td><b>{{avg.male.neck*10}}</b>%</td>
+							</tr>
+							<tr>
+								<td>Female</td>
+								<td><b>{{avg.female.arm*10}}</b>%</td>
+								<td><b>{{avg.female.neck*10}}</b>%</td>
+							</tr>
+						</tbody>
+					</table>
+
+				</div>
+
+				
+			</div>
+		</div>
+	</div>
+</div>
+
 <div class="col-lg-4 col-lg-offset-4 col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1 card-dash" ng-repeat="subject in subjects">
 	
 	<div class="panel panel-primary">

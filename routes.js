@@ -11,6 +11,11 @@ webApp
 	    		templateUrl: 'views/create/create.html',
 	    		controller: 'CreateController',
 	 		})
+
+	 		.when('/chart', {
+	    		templateUrl: 'views/chart/chart.html',
+	    		controller: 'ChartController',
+	 		})
 	 	;
 
 	});

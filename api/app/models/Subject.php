@@ -49,6 +49,39 @@ class Subject extends Eloquent {
 
 	}
 
+	public static function arm(){
+
+		$data = array();
+
+		$subjects = Subject::all();
+
+		foreach ($subjects as $subject) {
+
+			$data[] = $subject->a_one + $subject->a_two;
+
+		}
+
+		return $data;
+
+
+	}
+
+	public static function neck(){
+
+		$data = array();
+
+		$subjects = Subject::all();
+
+		foreach ($subjects as $subject) {
+
+			$data[] = $subject->n_one + $subject->n_two;
+
+		}
+
+		return $data;
+
+	}
+
 	public static function getMaleArmAvg(){
 
 		$male = Subject::male();
@@ -144,5 +177,87 @@ class Subject extends Eloquent {
 		return $avg;
 
 	}
+
+	public static function deviate($array = null){
+
+		$mean = Subject::stepOne($array);
+
+		$squared = Subject::stepTwo($array, $mean);
+
+		$newMean = Subject::stepThree($squared);
+
+		$deviation = Subject::stepFour($newMean);
+
+		return $deviation;
+
+	}
+
+	
+	// 1. Work out the mean of all numbers in group
+	private static function stepOne($array = null){
+
+		$sum = 0;
+
+		$counter = 0;
+
+		foreach ($array as $a) {
+
+			$sum = $sum + $a;
+
+			$counter = $counter + 1;
+
+		}
+
+		$mean = $sum/$counter;
+
+		return $mean;
+
+	}
+
+	// 2. Foreach number, subtract the mean and square the result
+	private static function stepTwo($array = null, $mean = null){
+
+		foreach($array as $a) {
+
+			$number = $a - $mean;
+
+			$array[] = $number*$number;
+
+		}
+
+		return $array;
+
+	}
+
+	// 3. Work out the mean of those squared numbers
+	private static function stepThree($array = null){
+
+		$sum = 0;
+
+		$counter = 0;
+
+		foreach($array as $a){
+
+			$sum = $sum + $a;
+
+			$counter = $counter + 1;
+
+		}
+
+		$mean = $sum/$counter;
+
+		return $mean;
+
+	}
+
+	// 4. Take the square root
+	private static function stepFour($mean = null){
+
+		$data = sqrt($mean);
+
+		return $data;
+
+	}
+
 
 }

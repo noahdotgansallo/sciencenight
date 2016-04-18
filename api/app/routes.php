@@ -18,3 +18,5 @@ Route::get('view/', 'HomeController@view');
 Route::get('avg/', 'HomeController@avg');
 
 Route::get('amt/', 'HomeController@getAmount');
+
+Route::get('deviation', 'HomeController@deviation');

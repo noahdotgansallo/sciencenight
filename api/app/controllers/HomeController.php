@@ -32,6 +32,16 @@ class HomeController extends BaseController {
 
 	}
 
+	public function deviation(){
+
+		$arm = Subject::arm();
+
+		$data = Subject::deviate($arm);
+
+		return $data;
+
+	}
+
 	public function view(){
 
 		try {
